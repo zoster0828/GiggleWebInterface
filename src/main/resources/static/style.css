@@ -1,5 +1,8 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 #news-container {
@@ -7,58 +10,50 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* 최대 너비 설정 */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .card {
-    width: calc(33.333% - 20px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    border-radius: 10px;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 300px; /* 카드의 가로 너비 고정 */
 }
 
-.card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.card-image {
+    flex-grow: 0;
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* 썸네일 이미지 고정 높이 */
+    width: 100%; /* 이미지 너비를 카드 너비에 맞게 조정 */
 }
 
 .card-content {
-    padding: 20px;
+    flex-grow: 1;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 내용과 '자세히 보기' 버튼 사이의 공간을 균등하게 분배 */
 }
 
 .card-title {
-    font-size: 18px;
-    margin: 0 0 10px;
+    font-size: 16px; /* 제목 폰트 크기 설정 */
+    margin: 0 0 10px; /* 제목 아래의 여백 설정 */
+    overflow: hidden; /* 내용이 박스를 넘어가면 숨김 처리 */
+    white-space: nowrap; /* 텍스트를 한 줄로 표시 */
+    text-overflow: ellipsis; /* 내용이 넘칠 경우 '...'으로 표시 */
+    max-height: 40px; /* 제목의 최대 높이 설정 */
 }
 
-.card-link {
-    display: inline-block;
-    text-decoration: none;
-    color: #007bff;
-    margin-top: 10px;
-}
-
-@media screen and (max-width: 768px) {
-    .card {
-        width: calc(50% - 20px);
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .card {
-        width: 100%;
-    }
-}
-#news-container {
-    max-width: 1200px; /* 최대 너비 설정 */
-    margin: 0 auto; /* 상하 여백은 0, 좌우 여백은 자동 조정 */
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
+.card-logo {
+    width: 20px; /* 로고 크기 조정 */
+    height: 20px; /* 로고 크기 조정 */
+    margin-bottom: 5px; /* 로고와 타이틀 사이의 여백 */
 }

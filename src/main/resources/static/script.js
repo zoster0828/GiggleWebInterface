@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('http://localhost:8080/articles/latest?count=10')
+    fetch('http://localhost:8080/articles/latest')
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('news-container');
@@ -7,11 +7,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 const card = document.createElement('div');
                 card.className = 'card';
 
-                const image = document.createElement('img');
-                image.src = article.thumbnailUrl;
+                const imageDiv = document.createElement('div');
+                imageDiv.className = 'card-image';
+                imageDiv.style.backgroundImage = `url(${article.thumbnailUrl})`;
 
                 const content = document.createElement('div');
                 content.className = 'card-content';
+
+                const logo = document.createElement('img');
+                logo.className = 'card-logo';
+                logo.src = 'favicons/'+article.site+'.png'; // 로고 이미지 경로
+                logo.alt = `${article.site} 로고`;
 
                 const title = document.createElement('h4');
                 title.className = 'card-title';
@@ -23,9 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 link.textContent = '자세히 보기';
                 link.target = '_blank';
 
+                content.appendChild(logo);
                 content.appendChild(title);
                 content.appendChild(link);
-                card.appendChild(image);
+                card.appendChild(imageDiv);
                 card.appendChild(content);
                 container.appendChild(card);
             });
