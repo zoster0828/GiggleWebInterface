@@ -25,6 +25,16 @@ body {
     flex-direction: column;
     height: 100%;
     width: 300px; /* 카드의 가로 너비 고정 */
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    color: inherit; /* 링크 색상을 상속받아 기본 텍스트 색상 유지 */
+    border: 1px solid #ddd; /* 카드에 경계선 추가 */
+    border-radius: 5px; /* 카드 모서리 둥글게 */
+    overflow: hidden; /* 내용이 카드 밖으로 넘어가지 않도록 */
+}
+
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 호버 효과 */
+    text-decoration: none; /* 호버 시 밑줄 제거 유지 */
 }
 
 .card-image {
