@@ -8,7 +8,7 @@ public class ArticleFactory {
                 .id(articleDto.id)
                 .title(articleDto.title)
                 .url(articleDto.url)
-                .sites(Sites.valueOf(articleDto.site))
+                .sites(articleDto.site)
                 .likes(articleDto.likes)
                 .views(articleDto.views)
                 .sourceLikes(articleDto.sourceLikes)

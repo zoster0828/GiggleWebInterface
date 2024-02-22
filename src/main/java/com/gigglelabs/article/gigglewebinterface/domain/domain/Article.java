@@ -13,7 +13,7 @@ public class Article {
     private String id;
     private String title;
     private String url;
-    private Sites sites;
+    private String sites;
     private Long likes;
     private Long views;
     private Long sourceLikes;
