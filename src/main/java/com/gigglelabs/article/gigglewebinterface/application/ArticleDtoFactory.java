@@ -17,6 +17,7 @@ public class ArticleDtoFactory {
                 .sourceViews(article.getSourceViews())
                 .sourceDate(article.getSourceDate())
                 .thumbnailUrl(article.getThumbnailUrl())
+                .preText(article.getPreText())
                 .build();
     }
 }

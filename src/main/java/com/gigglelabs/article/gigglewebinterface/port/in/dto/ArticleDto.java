@@ -14,4 +14,5 @@ public class ArticleDto {
     public Long sourceViews;
     public Long sourceDate;
     public String thumbnailUrl;
+    public String preText;
 }

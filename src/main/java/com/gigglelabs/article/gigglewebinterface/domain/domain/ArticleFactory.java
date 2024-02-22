@@ -15,6 +15,7 @@ public class ArticleFactory {
                 .sourceViews(articleDto.sourceViews)
                 .sourceDate(articleDto.sourceDate)
                 .thumbnailUrl(articleDto.thumbnailUrl)
+                .preText(articleDto.preText)
                 .build();
     }
 }

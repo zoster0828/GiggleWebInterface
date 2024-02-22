@@ -17,7 +17,7 @@ public class MysqlArticleAdapater implements ArticlePersistencePort {
 
     @Override
     public int save(ArticleDto articleDto) {
-        String sql = "INSERT INTO Articles (id, title, url, site, likes, views, sourceLikes, sourceViews, sourceDate, thumbnailUrl) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Articles (id, title, url, site, likes, views, sourceLikes, sourceViews, sourceDate, thumbnailUrl, preText) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -32,6 +32,7 @@ public class MysqlArticleAdapater implements ArticlePersistencePort {
             pstmt.setLong(8, articleDto.sourceViews);
             pstmt.setLong(9,  articleDto.sourceDate);
             pstmt.setString(10, articleDto.thumbnailUrl);
+            pstmt.setString(11, articleDto.preText);
 
             return pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -61,6 +62,7 @@ public class MysqlArticleAdapater implements ArticlePersistencePort {
                         .sourceViews(resultSet.getLong("sourceViews"))
                         .sourceDate(resultSet.getLong("sourceDate"))
                         .thumbnailUrl(resultSet.getString("thumbnailUrl"))
+                        .preText(resultSet.getString("preText"))
                         .build();
 
                 articles.add(articleDto);

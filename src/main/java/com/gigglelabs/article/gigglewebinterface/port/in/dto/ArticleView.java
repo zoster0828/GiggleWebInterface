@@ -9,6 +9,7 @@ public class ArticleView {
     public Long views;
     public Long date;
     public String thumbnailUrl;
+    public String preText;
     public ArticleView(ArticleDto articleDto) {
         this.id = articleDto.id;
         this.title = articleDto.title;
@@ -18,5 +19,6 @@ public class ArticleView {
         this.views = articleDto.views;
         this.date = articleDto.sourceDate;
         this.thumbnailUrl = articleDto.thumbnailUrl;
+        this.preText = articleDto.preText;
     }
 }
