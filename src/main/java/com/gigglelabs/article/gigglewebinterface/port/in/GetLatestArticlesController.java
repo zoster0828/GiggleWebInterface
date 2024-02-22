@@ -21,7 +21,7 @@ public class GetLatestArticlesController {
     private GetLatestArticlesUsecase getLatestArticlesUsecase;
 
     @GetMapping("/latest")
-    public List<ArticleView> getLatestArticles(@RequestParam(defaultValue = "10") Integer count) {
+    public List<ArticleView> getLatestArticles(@RequestParam(defaultValue = "50") Integer count) {
         GetLatestArticleDtos getLatestArticleDtos = getLatestArticlesUsecase.execute(count);
 
         List<ArticleView> result = new ArrayList<>();

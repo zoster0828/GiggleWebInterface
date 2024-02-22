@@ -15,8 +15,8 @@ public class ArticleView {
         this.title = articleDto.title;
         this.url = articleDto.url;
         this.site = articleDto.site;
-        this.likes = articleDto.likes;
-        this.views = articleDto.views;
+        this.likes = articleDto.sourceLikes;
+        this.views = articleDto.sourceViews;
         this.date = articleDto.sourceDate;
         this.thumbnailUrl = articleDto.thumbnailUrl;
         this.preText = articleDto.preText;
