@@ -10,7 +10,7 @@ public class ArticleDtoFactory {
                 .id(article.getId())
                 .title(article.getTitle())
                 .url(article.getUrl())
-                .site(article.getSites().name())
+                .site(article.getSites())
                 .likes(article.getLikes())
                 .views(article.getViews())
                 .sourceLikes(article.getSourceLikes())

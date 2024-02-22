@@ -17,9 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const bgColor = siteColors[article.site] || 'rgba(255, 255, 255, 0.5)'; // 기본 배경색 설정
                 link.style.backgroundColor = bgColor;
 
+                const imageUrl = article.thumbnailUrl || 'img/nothumb.png'; // 기본 이미지 경로를 설정하세요
+
                 const imageDiv = document.createElement('div');
                 imageDiv.className = 'card-image';
-                imageDiv.style.backgroundImage = `url(${article.thumbnailUrl})`;
+                imageDiv.style.backgroundImage = `url(${imageUrl})`;
+
 
                 const content = document.createElement('div');
                 content.className = 'card-content';
